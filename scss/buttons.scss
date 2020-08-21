@@ -1,0 +1,33 @@
+@use './transition';
+$primary: #279af1;
+$warning: #F6AE2D;
+.button {
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    @include transition.transition(all, .3s);
+    &:focus {
+        outline: none;
+    }
+    &.is-primary {
+        background-color: $primary;
+        color: white;
+        border: $primary solid 1px;
+        &:hover {
+            background-color: white;
+            color: $primary;
+        }
+    }
+    &.is-warning {
+        background-color: $warning;
+        color: white;
+        border: $warning solid 1px;
+        &:hover {
+            background-color: white;
+            color: $warning;
+        }
+    }
+    &.is-rounded {
+        border-radius: 999px;
+    }
+}

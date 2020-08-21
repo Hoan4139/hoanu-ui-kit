@@ -1,0 +1,59 @@
+$mobile: 768px;
+$tablet: 1024px;
+$desktop: 1216px;
+$widescreen: 1408px;
+$start: 1;
+$end: 12;
+@mixin tablet {
+    @media (max-width: #{$tablet - 1px}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$mobile - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (max-width: #{$desktop - 1px}) {
+        @content;
+    }
+}
+
+@mixin widescreen {
+    @media (max-width: #{$widescreen - 1px}) {
+        @content;
+    }
+}
+
+.row {
+    display: flex;
+    &.is-vertical-centered {
+        align-items: center;
+    }
+}
+
+@for $i from $start through $end {
+    .column-#{$i} {
+        width: percentage(($start/$end)*$i);
+        &.is-hidden {
+            display: none;
+        }
+        @include tablet {
+            &.is-hidden-tablet {
+                display: none;
+            }
+        }
+    }
+}
+
+.column {
+    flex-grow: 1;
+    @include tablet {
+        &.is-hidden-tablet {
+            display: none;
+        }
+    }
+}
