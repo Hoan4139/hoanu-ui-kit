@@ -1,6 +1,10 @@
 @use './transition';
-$primary: #279af1;
-$warning: #F6AE2D;
+$primary: #008DD5;
+$secondary: #A5B5BF;
+$warning: #D78521;
+$danger: #ED254E;
+$success: #2FBF71;
+$dark: #2B2D24;
 .button {
     border: none;
     padding: 0.5rem 1rem;
@@ -9,7 +13,7 @@ $warning: #F6AE2D;
     &:focus {
         outline: none;
     }
-    &.is-primary {
+    &-is-primary {
         background-color: $primary;
         color: white;
         border: $primary solid 1px;
@@ -17,14 +21,92 @@ $warning: #F6AE2D;
             background-color: white;
             color: $primary;
         }
+        &:focus {
+            outline: thin inset $primary;
+        }
+        &:active {
+            background-color: white;
+            color: $primary;
+        }
     }
-    &.is-warning {
+    &-is-secondary {
+        background-color: $secondary;
+        color: white;
+        border: $secondary solid 1px;
+        &:hover {
+            background-color: white;
+            color: $secondary;
+        }
+        &:focus {
+            outline: thin inset $secondary;
+        }
+        &:active {
+            background-color: white;
+            color: $secondary;
+        }
+    }
+    &-is-warning {
         background-color: $warning;
         color: white;
         border: $warning solid 1px;
         &:hover {
             background-color: white;
             color: $warning;
+        }
+        &:focus {
+            outline: thin inset $warning;
+        }
+        &:active {
+            background-color: white;
+            color: $warning;
+        }
+    }
+    &-is-danger {
+        background-color: $danger;
+        color: white;
+        border: $danger solid 1px;
+        &:hover {
+            background-color: white;
+            color: $danger;
+        }
+        &:focus {
+            outline: thin inset $danger;
+        }
+        &:active {
+            background-color: white;
+            color: $danger;
+        }
+    }
+    &-is-success {
+        background-color: $success;
+        color: white;
+        border: $success solid 1px;
+        &:hover {
+            background-color: white;
+            color: $success;
+        }
+        &:focus {
+            outline: thin inset $success;
+        }
+        &:active {
+            background-color: white;
+            color: $success;
+        }
+    }
+    &-is-dark {
+        background-color: $dark;
+        color: white;
+        border: $dark solid 1px;
+        &:hover {
+            background-color: white;
+            color: $dark;
+        }
+        &:focus {
+            outline: thin inset $dark;
+        }
+        &:active {
+            background-color: white;
+            color: $dark;
         }
     }
     &.is-rounded {
